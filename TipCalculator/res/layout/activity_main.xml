@@ -8,5 +8,61 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.tipcalculator.MainActivity" >
 
+    <TextView
+        android:id="@+id/billWithoutTipTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="18dp"
+        android:text="@string/bill_without_tip_text_view" />
+
+    <EditText
+        android:id="@+id/tipEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/billWithoutTipEditText"
+        android:layout_toRightOf="@+id/tipTextView"
+        android:ems="5"
+        android:inputType="numberDecimal"
+        android:text="@string/tip_text_edit" />
+
+    <EditText
+        android:id="@+id/billWithoutTipEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/billWithoutTipTextView"
+        android:layout_toRightOf="@+id/billWithoutTipTextView"
+        android:ems="5"
+        android:inputType="numberDecimal"
+        android:text="@string/bill_without_tip_text_edit" />
+
+    <TextView
+        android:id="@+id/tipTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tipEditText"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/billWithoutTipEditText"
+        android:text="@string/tip_text_view" />
+
+    <EditText
+        android:id="@+id/totalBilleditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/totalBillTextView"
+        android:layout_alignLeft="@+id/tipEditText"
+        android:ems="5"
+        android:text="@string/total_bill_text_edit" />
+
+    <TextView
+        android:id="@+id/totalBillTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tipEditText"
+        android:layout_marginTop="39dp"
+        android:layout_toLeftOf="@+id/totalBilleditText"
+        android:text="@string/total_bill_text_view" />
 
 </RelativeLayout>

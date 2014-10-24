@@ -3,5 +3,14 @@
 
     <string name="app_name">TipCalculator</string>
     <string name="action_settings">Settings</string>
-
+    
+    <string name="bill_without_tip_text_view">Bill</string>
+    <string name="bill_without_tip_text_edit">0.0</string>
+    
+    <string name="tip_text_view">Tip</string>
+    <string name="tip_text_edit">0.15</string>
+    
+    <string name="total_bill_text_view">Total Bill</string>
+    <string name="total_bill_text_edit">0.0</string>
+    
 </resources>
