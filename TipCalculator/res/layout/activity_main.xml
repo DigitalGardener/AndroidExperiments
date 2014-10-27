@@ -48,7 +48,7 @@
         android:text="@string/tip_text_view" />
 
     <EditText
-        android:id="@+id/totalBilleditText"
+        android:id="@+id/totalBillEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/totalBillTextView"
@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tipEditText"
         android:layout_marginTop="39dp"
-        android:layout_toLeftOf="@+id/totalBilleditText"
+        android:layout_toLeftOf="@+id/totalBillEditText"
         android:text="@string/total_bill_text_view" />
 
 </RelativeLayout>
