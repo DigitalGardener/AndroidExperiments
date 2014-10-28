@@ -40,15 +40,26 @@ public class MainActivity extends Activity {
 			@Override
 			public void afterTextChanged(Editable arg0) {
 				
-				double tip = Double.parseDouble(tipEditText.getText().toString());
-				double billWithoutTip = Double.parseDouble(billWithoutTipEditText.getText().toString());
+				double tip;
+				double billWithoutTip;
+				double totalBill;
+
+				try {
+					
+					tip = Double.parseDouble(tipEditText.getText().toString());
+					billWithoutTip = Double.parseDouble(billWithoutTipEditText.getText().toString());
+
+					totalBill = billWithoutTip * (1 +  tip);
+					
+				} catch (NumberFormatException e) {
+					totalBill = 0.0;
+				}
 				
-				double totalBill = billWithoutTip * (1 +  tip);
 				
 				totalBillEditText.setText(String.format("%5.2f", totalBill));
-				
 			}
 		});
+		
 		tipEditText = (EditText) findViewById(R.id.tipEditText);
 		totalBillEditText = (EditText) findViewById(R.id.totalBillEditText);
 	}

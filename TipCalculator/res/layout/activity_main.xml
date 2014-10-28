@@ -54,6 +54,7 @@
         android:layout_alignBottom="@+id/totalBillTextView"
         android:layout_alignLeft="@+id/tipEditText"
         android:ems="5"
+        android:inputType="numberDecimal"
         android:text="@string/total_bill_text_edit" />
 
     <TextView
