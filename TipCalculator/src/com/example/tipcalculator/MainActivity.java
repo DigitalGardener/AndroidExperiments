@@ -16,6 +16,10 @@ public class MainActivity extends Activity {
 	private EditText tipEditText;
 	private EditText billWithoutTipEditText;
 	
+	private double tip = 0.15;
+	private double billWithoutTip;
+	private double totalBill;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -39,29 +43,51 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void afterTextChanged(Editable arg0) {
-				
-				double tip;
-				double billWithoutTip;
-				double totalBill;
-
 				try {
-					
-					tip = Double.parseDouble(tipEditText.getText().toString());
 					billWithoutTip = Double.parseDouble(billWithoutTipEditText.getText().toString());
-
-					totalBill = billWithoutTip * (1 +  tip);
-					
 				} catch (NumberFormatException e) {
-					totalBill = 0.0;
+					billWithoutTip = 0.0;
 				}
 				
-				
-				totalBillEditText.setText(String.format("%5.2f", totalBill));
+				caculateAndDisplayTotalBill();
 			}
+
 		});
 		
 		tipEditText = (EditText) findViewById(R.id.tipEditText);
+		tipEditText.addTextChangedListener(new TextWatcher() {
+			
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count,
+					int after) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void afterTextChanged(Editable s) {
+				try {
+					tip = Double.parseDouble(tipEditText.getText().toString());
+				} catch (NumberFormatException e) {
+					tip = 0.0;
+				}
+
+				caculateAndDisplayTotalBill();
+			}
+		});
+	
 		totalBillEditText = (EditText) findViewById(R.id.totalBillEditText);
+	}
+
+	public void caculateAndDisplayTotalBill() {
+		totalBill = billWithoutTip * (1 +  tip);
+		totalBillEditText.setText(String.format("%5.2f", totalBill));
 	}
 
 	@Override
