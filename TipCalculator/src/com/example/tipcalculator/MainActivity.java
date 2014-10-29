@@ -47,7 +47,8 @@ public class MainActivity extends Activity {
 					billWithoutTip = 0.0;
 				}
 				
-				caculateAndDisplayTotalBill();
+				caculateTotalBill();
+				displayTotalBill();
 			}
 
 		});
@@ -76,15 +77,19 @@ public class MainActivity extends Activity {
 					tip = 0.0;
 				}
 
-				caculateAndDisplayTotalBill();
+				caculateTotalBill();
+				displayTotalBill();
 			}
 		});
 	
 		totalBillEditText = (EditText) findViewById(R.id.totalBillEditText);
 	}
 
-	private void caculateAndDisplayTotalBill() {
+	private void caculateTotalBill() {
 		totalBill = billWithoutTip * (1 +  tip);
+	}
+
+	private void displayTotalBill() {
 		totalBillEditText.setText(String.format("%5.2f", totalBill));
 	}
 
