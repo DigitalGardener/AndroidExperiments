@@ -12,12 +12,12 @@ import android.widget.EditText;
 
 public class MainActivity extends Activity {
 
-	private EditText totalBillEditText;
-	private EditText tipEditText;
 	private EditText billWithoutTipEditText;
+	private EditText tipEditText;
+	private EditText totalBillEditText;
 	
-	private double tip = 0.15;
 	private double billWithoutTip;
+	private double tip = 0.15;
 	private double totalBill;
 
 	@Override
