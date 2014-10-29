@@ -85,7 +85,7 @@ public class MainActivity extends Activity {
 		totalBillEditText = (EditText) findViewById(R.id.totalBillEditText);
 	}
 
-	public void caculateAndDisplayTotalBill() {
+	private void caculateAndDisplayTotalBill() {
 		totalBill = billWithoutTip * (1 +  tip);
 		totalBillEditText.setText(String.format("%5.2f", totalBill));
 	}
